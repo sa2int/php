@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>コンテンツテスト</title>
+
+<!-- ブートーストラップ -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+
+<!-- 元デザィン -->
+<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+<style>
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0,0,0,0);
+	border: 0;
+}
+</style>
+
+<script src="https://use.fontawesome.com/118df4adbe.js"></script>
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script>
+	$(function() {
+		$(".headC").click(function() {
+			$(".headB").slideToggle();
+		});
+	});
+</script>
+
+<!-- JQuery(ブートーストラップのJavaPluginのために必要) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<!-- Compileされた全てのPluginを含みます。 -->
+<script src="js/bootstrap.min.js"></script>
+
+</head>
+<body class="nohero">
+
+<header>
+<div class="containers">
+	<div class="containers-small">
+
+		<a href="index.html" class="headA">LOGGER</a>
+
+		<button type="button" class="headC">
+		<span class="fa fa-bars" title="MENU"></span>
+		</button>
+	</div>
+	
+	<nav class="headB">
+		<ul>
+			<li><a href="index.html">トップ</a></li>
+			<li><a href="contents.html">コンテンツ</a></li>
+			<li><a href="about.html">ABOUT</a></li>
+			<li><a href="contact.html">お問い合わせ</a></li>
+			<!-- 刑事犯テスト jhkim --> 
+			<li><a href="writetable.html">掲示板</a></li>
+		</ul>
+	</nav>
+</div>
+</header>
+
+<!-- 自習 -->
+<div class="writetable">
+<div class="title">
+	<center><h1>掲示板</h1></center><!-- このように整列する事もできます。 -->
+</div>
+<table class="table table-hover">
+	<thead>
+	<tr class="info">
+		<th>番号</th><!-- tableHead -->
+		<th>名前</th>
+		<th>性別</th>
+		<th>作成者</th>
+		<th>時間</th>
+		<th>ヒット</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr>
+		<td>1</td><!-- tableData -->
+		<td><a href="#">テスト用</a></td>
+		<td>男</td>
+		<td>キム・ジョンフン</td>
+		<td>13時</td>
+	</tr>
+	<tr>
+		<td>2</td><!-- tableData -->
+		<td><a href="#">インターネットが繋がるのかどうかはアプロード成功メッセージで確認</a></td>
+		<td>女</td>
+		<td>キム・ジョンフン</td>
+		<td>14時</td>
+	</tr>
+	<tr>
+		<td>3</td><!-- tableData -->
+		<td><a href="#">DBはまだないから今確認できる事をしましょう</a></td>
+		<td>男</td>
+		<td>キム・ジョンフン</td>
+		<td>15時</td>
+	</tr>
+		<tr>
+		<td>4</td><!-- tableData -->
+		<td><a href="#">ダミーデータ4</a></td>
+		<td>女</td>
+		<td>キム・ジョンフン</td>
+		<td>15時</td>
+	</tr>
+		<tr>
+		<td>5</td><!-- tableData -->
+		<td><a href="#">ダミーデータ5</a></td>
+		<td>男</td>
+		<td>キム・ジョンフン</td>
+		<td>15時</td>
+	</tr>
+	</tbody>
+</table>
+
+<nav>
+  <ul class="pagination">
+    <li class="disabled">
+      <a href="#" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+    </li>
+	<li class="active"><a href="#">1<span class="sr-only">(current)</span></a></li>
+    <li><a href="#">2</a></li>
+    <li><a href="#">3</a></li>
+    <li><a href="#">4</a></li>
+    <li><a href="#">5</a></li>
+    <li>
+      <a href="#" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </li>
+  </ul>
+</nav>
+
+<div class="write">
+	<button type="button" onclick="location.href='writeboard.php'">文を書く</button>
+</div>
+</div>
+<!-- 自習 -->
+
+<footer>
+<div class="container">
+	<div class="footA">
+		<h2>LOGGER</h2>
+		<p>
+			郵便番号000-0000 京都部中央区杉並3-3-3-403<br>
+			<a href="http://logger.nett/">
+			ホムページ</a>
+		</p>
+		
+		<nav class=footD>
+			<ul>
+			<li><a href="#"><span class="fa fa-twitter"　title="Twitter"></span></a></li>
+			<li><a href="#"><span class="fa fa-facebook"　title="Faceboook"></span></a></li>
+			<li><a href="#"><span class="fa fa-google-plus"　title="Google Plus"></span></a></li>
+			<li><a href="#"><span class="fa fa-instagram"　title="Instagram"></span></a></li>
+			<li><a href="#"><span class="fa fa-youtube"　title="Youbute"></span></a></li>
+			</ul>
+		</nav>
+	</div>
+	
+	<nav class="footB">
+		<div>
+			<h3>ABOUT</h3>
+			<ul>
+				<li><a href="#">設置</a></li>
+				<li><a href="#">所在地</a></li>
+				<li><a href="#">地図</a></li>
+				<li><a href="#">スタッフ</a></li>
+			</ul>
+		</div>
+		<div>
+			<h3>SUPPORT</h3>
+			<ul>
+				<li><a href="#">ダウンロード</a></li>
+				<li><a href="#">マニュアル</a></li>
+				<li><a href="#">よくある質問</a></li>
+				<li><a href="#">お問い合わせ</a></li>
+			</ul>
+		</div>
+		<div>
+			<h3>CONTENTS</h3>
+			<ul>
+				<li><a href="#">お知らせ</a></li>
+				<li><a href="#">ビジネス</a></li>
+				<li><a href="#">プロヒィール</a></li>
+				<li><a href="#">開発者</a></li>
+				<li><a href="#">ブログ</a></li>
+			</ul>
+		</div>
+	</nav>
+		
+	<div class="footC">
+		@ LOGGER corp. All right reserved.
+	</div>
+</div>
+</footer>
+
+</body>
+</html>
+

@@ -1,0 +1,19 @@
+<meta charset="utf-8">
+
+<p>time : <span id="time"></span></p>
+<input type="button" id="execute" value="やり直す"></input>
+<script>
+document.querySelector('input').addEventListener('click', function(event) {
+	//inputのことが入力されるとEventListenerで新しいeventが発生します。
+	//target.addEventListener(type, listener);
+	var xhr = new XMLHttpRequest();//XMLHttpRequest客体作る
+	//Ajaxはすでにphp.iniの中にClassとして入っているのを確認できます。
+	xhr.open('GET', './time.php');//どこに接続するか指定(GET or POST　として, どんな事を繋がるのか)
+	xhr.onreadystatechange = function() {
+		if(xhr.readyState === 4 && xhr.status === 200) {//4は通信完了、200は通信成功
+			document.querySelector('#time').innerHTML = xhr.responseText;
+		}
+	}//Event 
+	xhr.send();//データ伝送
+});
+</script>

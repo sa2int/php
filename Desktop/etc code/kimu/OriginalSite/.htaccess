@@ -1,0 +1,11 @@
+AddHandler cgi-script htpasswd
+<Files request.php>
+DirectoryIndex index.html index.htm index.shtml index.php index.cgi
+Options -Indexes
+AuthUserFile /home/game-mania/www/test/kimu/OriginalSite/.htpasswd
+AuthType Basic
+AuthName "Web access"
+Require valid-user
+Satisfy all
+Order deny,allow
+</Files>

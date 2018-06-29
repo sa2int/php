@@ -1,0 +1,38 @@
+<meta charset="utf-8">
+
+<p>time: <span id="time"></span></p>
+<select id="timezone">
+	<option value="Asis/Seoul">asia/seoul</option>
+	<option value="America/New_York">America/New_York</option>
+</select>
+<select id="format">
+	<option value="Y-m-d H:i:s">Y-m-d H:i:s</option>
+	<option value="Y-m-d">Y-m-d</option>
+</select>
+<input type="button" id="execute" value="やり直す" />
+<script>
+document.querySelector('input').addEventListener('click', function(event) {
+	//inputのことが入力されるとEventListenerで新しいeventが発生します。
+	//target.addEventListener(type, listener);
+	var xhr = new XMLHttpRequest();//XMLHttpRequest客体作る
+	//Ajaxはすでにphp.iniの中にClassとして入っているのを確認できます。
+	xhr.open('POST', './time2.php');//どこに接続するか指定(GET or POST　として, どんな事を繋がるのか)
+	xhr.onreadystatechange = function() {
+		if(xhr.readyState === 4 && xhr.status === 200) {//4は通信完了、200は通信成功
+			document.querySelector('#time').innerHTML = xhr.responseText;
+		}
+	}//Event Ready
+	//onreadystatechangeイベントはサバー側との通信が終わった時に呼び出されるイベントです。
+	//readyStateは通信の現状態,statusはHTTP通信の結果。
+	//responseTextはサバー側から受けたデータを持っています。
+	
+	xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+	//サバー側に伝送するデータイプの形式(MIME)を指定すします。
+	var data = '';
+	data += 'timezone='+document.getElementById('timezone').value;
+	data += '&format='+document.getElementById('format').value;
+	//サバー側し伝送する形式を作る。(名前=値&名前=値...の形式で)
+	
+	xhr.send(data);//データ伝送(変数含めで)
+});
+</script>

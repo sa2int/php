@@ -1,0 +1,975 @@
+@charset "UTF-8";
+
+/* 基本色 setting　*/
+:root {
+  --main-color: #5D9AB2; /* #046380 等 */
+  --accent-color: #BF6A7A; /* #A7A37E 等　*/
+  --dark-color: #2B5566; /* #002F2F 等　*/
+  --text-bright-color: #fff;
+  --icon-color: #fff;
+  --icon-bk-color: #ddd;
+  --large-width: 1000px;
+  --gray-color: #ddd;
+  --green-color: #00B233;
+  --middle-width: 800px;
+  --small-width: 500px;
+}
+
+/* 基本設定：　フォントサイズ */
+@media (max-width: 599px) {
+	:root {
+		font-size: 14px;
+	}
+}
+
+@media (min-width: 600px) and (max-width: 799px) {
+	:root {
+		font-size: 16px;
+	}
+}
+
+@media (max-width; 800px) {
+	:root {
+		font-size: 18px;
+	}
+}
+
+body {
+	font-size: 16px;
+}
+
+/* 基本設定：　ページ全体 */
+body {
+  margin: 0;
+  font-family: 'メイリオ',
+  	’Hiragino Kaku Gothic Pro’,
+	sans-serif;
+  cursor: url(img/Flan_vanlig_merking.cur), pointer;
+}/* mouser cursor変更。pointerまで入る */
+
+/* コンテンツA: ヒーローインージ　*/
+.conA {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  mid-height: 450px;
+  background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(img/popuko1.jpg);
+  background-position: center;
+  background-size: cover;
+  color: #fff;
+  color: var(--text-bright-color); /* input color */
+  text-align: center;
+}
+
+/* slide image setting - backgroundTrasition.js Start */
+/* ボタンもあるもっと良いスライドを使いたいんらブートストラップとかを探して適応しましょう */
+.conA .image-top, .conA .image-bottom {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+}
+/* 기본 렌더링(layer 0) 이외의 추가적인 레이어를 생성하고 박스를 위치시키기 위한 것이다.
+즉, 내 예시에선 위에 메뉴화면을 나타내기위해 z-index: -1을 넣은것이고, 넣지 않으면 이미지가 제일 위에 올라와버려 글자 및 버튼이 보이지 않게된다. */
+
+#image-download { display: none; }
+/* backgroundTransition.js END */
+
+.conA h1 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-family: 'Montserrat', sans-serif; //上書き
+  font-size: 15vw; //48px
+  letter-spacing: 0.2em;
+  margin-left: 0.2em;
+}
+
+.conA p {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 18px;
+}
+
+.conA img {
+  width: 20%;
+}
+
+.conA a {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 30px;
+  border: solid 3px currentColor;
+  border-radius: 6px;
+  background-color: #7A00FF;
+  color: #fff;
+  color: var(--text-bright-color);
+  font-size: 14px;
+  text-decoration; none;
+}
+
+.conA a:hover   {
+ background-image: linear-gradient(
+  rgba(255.255.255.0.2),
+  rgba(255.255.255.0.2)
+ );
+}
+
+@media (min-width: 768px) {
+  .conA h1 {
+  	font-size: 115px;
+  }
+  .conA p {
+  	font-size: 24px;
+  }
+}
+
+/* コンテンツB: 概要（アイコン＋テキスト）*/
+.conB .container {
+	padding-top: 2px;
+}
+
+.conB .shen3 {
+	min-height: 200px;
+	background-image: url(img/shen3.jpg);
+	background-position: center;
+	background-size: cover;
+}
+
+.conB .text {
+	padding: 20px;
+}
+
+.conB h2 {
+	margin-top: 0;
+	margin-bottom: 10px;
+	font-size: 20px;
+}
+
+.conB p {
+	margin-top: 0;
+	matgin-bottom: 20px;
+	font-size: 14px;
+	line-height: 1.8;
+	opacity: 0.8;
+}
+
+.conB a {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 30px;
+  box-shadow: 0 0 0 1px #888;
+  border: solid 3px currentColor;
+  border-radius: 6px;
+  background-color: #7A00FF;
+  color: #fff;
+  color: var(--text-bright-color);
+  font-size: 14px;
+  text-decoration; none;
+}
+
+.conB a:hover   {
+ background-image: linear-gradient(
+  rgba(255.255.255.0.2),
+  rgba(255.255.255.0.2)
+ );
+}
+
+/* if(min-width > 768px) */
+@media (min-width: 768px) { 
+	.conB .container {
+		display: flex;
+		flex-direction: row-reverse;
+		max-width: 1000px;
+		max-width: var(--large-width);
+		margin-left: auto;
+		margin-right: auto;
+		padding-top: 40px;
+		padding-bottom: 40px;
+	}
+	
+	.conB .shen3 {
+		flex: 0 0 400px;
+	}
+	
+	.conB .text {
+		flex: 1;
+		padding: 50px;
+	}
+}
+
+/* コンテンツC: 概要（画面＋テキスト）*/
+.conC {
+	background-color: #0089FF;
+	color: #fff;
+	color: var(--text-bright-color);
+}
+
+.conC .shen1 {
+	min-height: 200px;
+	background-image: url(img/shen1.jpg);
+	background-position: center;
+	background-size: cover;
+}
+
+.conC .text {
+	padding: 20px;
+}
+
+/* if(min-width >768px) */
+@media (min-width: 768px) { 
+	.conC .container {
+		display: flex;
+		max-width: 1000px;
+		max-width: var(--large-width);
+		margin-left: auto;
+		margin-right: auto;
+	}
+	
+	.conC .shen1 {
+		flex: 3;
+	}
+	
+	.conC .text {
+		flex: 2;
+		padding: 50px;
+	}
+}
+
+.conC h2 {
+	margin-top: 0;
+	margin-bottom: 10px;
+	font-size: 20px;
+}
+
+.conC p {
+	margin-top: 0;
+	matgin-bottom: 20px;
+	font-size: 14px;
+	line-height: 1.8;
+	opacity: 0.8;
+}
+
+.conC a {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 30px;
+  border: solid 3px currentColor;
+  border-radius: 6px;
+  background-color: #7A00FF;
+  color: #fff;
+  color: var(--text-bright-color);
+  font-size: 14px;
+  text-decoration; none;
+}
+
+.conC a:hover   {
+ background-image: linear-gradient(
+  rgba(255.255.255.0.2),
+  rgba(255.255.255.0.2)
+ );
+}
+
+/* コンテンツD: 概要（画面＋テキスト: 逆！！）*/
+.conD .container {
+	padding-top: 2px;
+}
+
+.conD .shen2 {
+	min-height: 200px;
+	background-image: url(img/shen2.jpg);
+	background-position: center;
+	background-size: cover;
+}
+
+.conD .text {
+	padding: 20px;
+}
+
+.conD h2 {
+	margin-top: 0;
+	margin-bottom: 10px;
+	font-size: 20px;
+}
+
+.conD p {
+	margin-top: 0;
+	matgin-bottom: 20px;
+	font-size: 14px;
+	line-height: 1.8;
+	opacity: 0.8;
+}
+
+.conD a {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 30px;
+  box-shadow: 0 0 0 1px #888;
+  border: solid 3px currentColor;
+  border-radius: 6px;
+  background-color: #7A00FF;
+  color: #fff;
+  color: var(--text-bright-color);
+  font-size: 14px;
+  text-decoration; none;
+}
+
+.conD a:hover   {
+ background-image: linear-gradient(
+  rgba(255.255.255.0.2),
+  rgba(255.255.255.0.2)
+ );
+}
+
+/* if(min-width > 768px) */
+@media (min-width: 768px) { 
+	.conD .container {
+		display: flex;
+		flex-direction: row-reverse;
+		max-width: 1000px;
+		max-width: var(--large-width);
+		margin-left: auto;
+		margin-right: auto;
+		padding-top: 40px;
+		padding-bottom: 40px;
+	}
+	
+	.conD .shen2 {
+		flex: 0 0 400px;
+	}
+	
+	.conD .text {
+		flex: 1;
+		padding: 50px;
+	}
+}
+
+/* フッター */
+footer {
+	color: #fff;
+	color: var(--text-bright-color);
+	background-color: #2B00FF;
+}
+
+footer .container {
+	padding: 40px 20px;
+}
+
+@media (min-width: 768px) {
+	footer .container {
+		display: flex;
+		flex-wrap: wrap;
+		max-width: 1000px;
+		max-width: var(--large-width);
+		margin-left: auto;
+		margin-right: auto;
+	}
+	
+	.footA {
+		flex: 0 0 40%;
+	}
+	
+	.footB {
+		flex: 0 0 60%;
+	}
+	
+	.footC {
+		flex: 0 0 100%;
+	}
+}
+
+
+/* フッターA；　サイト情報*/
+.footA {
+	margin-bottom: 30px;
+}
+
+.footA h2 {
+	margin-top: 0;
+	margin-bottom: 10px;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 30px;
+	letter-spacing: 0.2em;
+}
+
+.footA p {
+	margin-top: 0;
+	margin-bottom: 0;
+	font-size: 14px;
+}
+
+.footA a {
+	color: inherit;
+	text-decoration: none;
+}
+
+/* フッターB； フッターメニュー　*/
+.footB div {
+	margin-bottom: 20px;
+}
+
+.footB h3 {
+	margin-top: 0;
+	margin-bottom: 10px;
+	border-bottom: solid 1px currentColor;
+	font-size: 14px;
+}
+
+.footB ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.footB a {
+	display: block;
+	padding: 5px;
+	color: inherit;
+	font-size: 12px;
+	text-decoration: none;
+}
+
+.footB a:hover {
+	background-color: rgba(0,0,0,0.3);
+}
+
+@media (min-width: 768px) {
+	.footB {
+		display: flex;
+	}
+	
+	.footB div {
+		flex: 1;
+	}
+	
+	.footB div:not(:first-child) {
+		margin-left: 40px;
+	}
+}
+
+/* フッターC； コピーライター　*/
+.footC {
+	font-size: 12px;
+	text-align: center;
+	font-family: 'Montserrat', sans-serif;
+}
+
+/* フッターD； SNSメニュー　*/
+.footD {
+	margin-top: 20px;
+}
+
+.footD ul {
+	display: flex;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.footD a {
+	display: block;
+	padding: 0;
+	margin-right: 8px;
+	color: inherit;
+	font-size: 16px;
+	text-decoration: none;
+	border: solid 1px currentColor;
+	width: 2em;
+	line-height: 2em;
+	border-radius: 50%;
+	text-align: center;
+}
+
+.footD a:hover {
+	background-color: rgba(0,0,0,0.3);
+}
+
+/* ヘッダー　*/
+header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 100;
+	width: 100%;
+	background-color: rgba(255, 255, 255, 0.9);
+}
+
+.samebody header {
+	/* position: static; 上書き, Menuを移動する為にはどうしようか確認 */
+	border-bottom: solid 1px #45397F;
+}
+
+/* ヘッダーA； サイト名　*/
+.headA {
+	display: inline-block;
+	line-height: 70px;
+	padding-left: 20px;
+	padding-right: 20px;
+	background-color: #45397F;
+	color: #fff;
+	color: var(--text-bright-color);
+	font-family: 'Montserrat', sans-serif;
+	font-size: 24px;
+	text-decoration: none;
+}
+
+/* ヘッダーB；　ナビゲーションメニュー　*/
+.headB ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.headB a {
+	display: block;
+	padding: 15px;
+	color: inherit;
+	font-size: 12px;
+	text-decoration: none;
+	margin-left: 5px;
+}
+
+.headB a:hover {
+	background-color: rgba(0,0,0,0.3);
+}
+
+@media (min-width: 768px) {
+	header .containers {
+		display: flex; /* 위아래 있는걸 좌우로  */
+		align-items: center; /* 세로 */
+		justify-content: space-between; /* 양쪽 정렬 */
+		max-width: 1000px;
+		max-width: var(--large-width);
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.headB ul {
+		display: flex;
+	}
+}
+
+/* ヘッダーC；　トグルボタン　*/
+@media (max-width: 767px) {
+	/* 小さな画面用の設定 */
+	header .containers-small {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+	
+	.headC {
+		margin-right: 10px;
+		padding: 0;
+		border: none;
+		outline: none;
+		background: none;
+		font-size: 28px;
+		opacity: 0.5;
+		cursor: pointer;
+	}
+	
+	.headC:hover {
+		opacity: 0.3;
+	}
+	
+	.headB {
+		display: none;
+	}
+}
+
+@media (min-width: 768px) {
+	/* 大きい画面用の設定　*/	
+	.headC {
+		display: none;
+	}
+	
+	.headB {
+		display: block !important;
+	}
+}
+
+/* コンテンツページ；　記事　*/
+.post .container {
+	max-width: 800px;
+	mad-width: var(--middle-width);
+	margin-left: auto;
+	margin-right: auto;
+	padding: 30px 10px;
+}
+
+.post h1 {
+	padding-left: 0.5rem;
+	border-left: solid 0.75rem #BF6A7A;
+	border-left: solid 0.75rem var(--accent-color);
+	font-size: 2rem;
+	font-weight: bold;
+}
+
+.post p {
+	line-height: 2;
+}
+
+.post img {
+	max-width: 100%;
+}
+
+.post li {
+	
+}
+
+/* アバウトページ */
+.history {
+	background-color: #5D9AB2;
+	background-color: var(--main-color);
+	color: #fff;
+	color: var(--text-bright-color);
+}
+
+.history .text {
+	padding: 20px;
+}
+
+.history h2 {
+	margin-top: 0;
+	margin-bottom: 10px;
+	font-size: 1.5rem;
+}
+
+.history .popuko {
+	min-height: 300px;
+	background-image: url(img/syacyou.gif);
+	background-position: center;
+	background-size: cover;
+}
+
+.history table {
+	border-collapse: collapse;
+	border-top: solid 1px #ddd;
+	border-top: solid 1px var(--gray-color);
+	font-size: 1.5rem;
+}
+
+.history th,
+.history td {
+	padding-top: 1.8rem;
+	padding-bottom: 1.8rem;
+	border-bottom: solid 1px #ddd;
+	border-bottom: solid 1px var(--gray-color);	
+}
+
+.history th {
+	padding-right: 1rem;
+	text-align: left;
+	word-break: keep-all;
+} /* 년, 월 개행 제거 */
+
+
+@media (min-width: 768px) {
+	.history .container {
+		display: flex;
+		max-width: 1000px;
+		max-width: var(--large-width);
+		margin-left: auto;
+		margin-right: auto;
+	}
+	
+	.history .popuko {
+		flex: 3;
+	}
+	
+	.history .text {
+		flex: 2;
+		padding: 50px;
+	}
+}
+
+/* お問い合わせページ: お問い合わせ先 */
+.contact {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	padding: 20px;
+	border: solid 1px #ddd;
+	border: solid 1px var(--gray-color);
+	text-align: center;
+}
+
+.contact h2 {
+	margin-top: 0;
+	font-size: 1.2rem;
+}
+
+.contact span {
+	display: inline-black;
+	margin-bottom: 20px;
+	font-size: 2.2rem;
+	width: 2em;
+	line-height: 2em;
+	border-radius: 50%;
+	text-align: center;
+	background-color: #5D9AB2;
+	background-color: var(--main-color);
+	color: #fff;
+	color: var(--icon-color);
+}
+
+.contact a {
+	font-size: 1.4rem;
+	color: inherit;
+	text-decoration: none;
+}
+
+@media (min-width: 768px) {
+	.contact-wrap {
+		display: flex;
+	}
+	
+	.contact {
+		flex: 1;
+	}
+	
+	.contact:first-child {
+		margin-right: 20px;
+	}
+}
+
+/* お問い合わせページ:　地図 */
+.location iframe {
+	width: 100%;
+	height: 400px;
+	vertical-align: bottom;
+}
+
+.location h2 {
+	margin: 0;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	background-color: #5D9AB2;
+	background-color: var(--main-color);
+	color: #fff;
+	color: var(--text-bright-color);
+	font-size: 1.5rem;
+	text-align: center;
+}
+
+/* アレンジ：　ヘッダーの色 */
+ .head-color {
+ 	background-color: #5D9AB2;
+	background-color: var(--main-color);
+	color: #fff;
+	color: var(--text-bright-color);
+ }
+ 
+ .head-color .headA {
+ 	background-color: transparent;
+	 color: inherit; /* 상속 */
+ }
+ 
+ .head-color .headC {
+ 	color: inherit; /* 상속 */
+ }
+ 
+ /* アレンジ:　ヘッダーとヒーローイメージを位ー体化 */
+ .head-hero {
+ 	background-color: transparent;
+	color: #fff;
+	color: var(--text-bright-color);
+ }
+ 
+ .head-hero .headA {
+ 	background-color: transparent;
+	color: inherit;
+ }
+ 
+ .head-hero .headC {
+ 	color: inherit;
+	 opacity: 1;
+ }
+ 
+ @media (max-width: 767px) {
+ 	.head-hero .headB {
+	 	background-color: rgba(0,0,0,0.6);
+	 }
+ }
+
+/* アレンジ:　ヘッダーを画面上部に固定 */
+.head-fixed,
+.samebody .head-fixed {
+	position: fixed;
+} /* 上書き */
+
+.samebody .head-fixed + * {
+	margin-top: 70px;
+}
+
+/* アレンジ:　関連記事メニュー */
+.related {
+	background-color: #5D9AB2;
+	background-color: var(--main-color);
+	padding: 30px 0;
+}
+
+.related ul {
+	display: flex;
+	flex-wrap: wrap;
+	max-width: 1000px;
+	max-width: var(--large-width);
+	margin: 30px auto;   /* 上下30、右左auto */
+	padding: 0;
+	list-style: none;
+}
+
+.related li {
+	flex: 1 1 100%;
+	display: flex;
+}
+
+.related a {
+	flex: 1; /* 長さ同じく作る */
+	margin: 10px;
+	display: block;
+	border: solid 1px #ddd;
+	border: solid 1px var(--gray-color);
+	background-color: rgba(255,255,255,0.5);
+	color: inherit;
+	text-decoration: none;
+}
+
+.related a:hover {
+	opacity: 0.8;
+}
+
+.related .photo {
+	min-height: 100px;
+	background-position: center;
+	background-size: cover;
+}
+
+.related .text {
+	margin: 10px;
+}
+
+.related h2 {
+	font-size: 18px;
+}
+
+.related p {
+	font-size: 14px;
+	opacity: 0.8;
+}
+
+@media (min-width: 600px) and (max-width: 899px) {
+	.related li {
+		flex: 1 1 50%;
+	}
+}
+
+@media (min-width: 900px) {
+	.related li {
+		flex: 1 1 25%;
+	}
+}
+
+/* 書く事セッティング　*/
+/* 反応ない時は　Command+Shift+R　*/
+/* 지금 알고있는내용(HTML에서 Style준거라던가) 어짜피 시간지나면 까먹겠지만, 감 잊이 않도록 최대한 노력하자 */
+/* margin 시계방향 */
+.writeboard {
+	text-align: left;
+	font-size: 20px;
+	padding-top: 20px;
+	margin: 0 0 2em 0;
+	max-width: 800px;
+	max-width: (--middle-width);
+	margin-left: auto;
+	margin-right: auto; /* 화면을 왼쪽 LOGGER에 맞추고싶으면 적용 */
+}
+
+.requestbutton {
+	margin-top: 1em;
+	text-align: center;
+}
+
+.title {
+	margin: 10px;
+}
+
+.titles {
+	margin: 10px;
+	display: flex; /* 위 아래를 좌우로 */
+	justify-content: space-between; /* 좌우정렬 */
+}
+
+.information {
+	margin: 10px;
+}
+
+.requestdate {
+	margin: 10px;
+}
+
+.datetime {
+	margin: 10px;
+}
+
+.contents {
+	margin: 10px;
+}
+
+.contents ul {
+	list-style: none;
+	font-size: 15px;
+}
+
+.details {
+	margin: 10px;
+}
+
+.details textarea {
+	resize: none;
+}/* 크롬 리사이즈 막음 */
+
+.button {
+	text-align: center;
+	margin: 10px;
+}
+
+/* 掲示板の設定　*/
+.writetable {
+	margin: 0 0 3em 0;
+	max-width: 1000px;
+	max-width: (--large-width);
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.write {
+	text-align: right;
+	font-size: 20px;
+}
+
+nav {
+	text-align: center;
+}
+
+/* 申し込み */
+.request {
+	border-top: solid 1px currentColor;
+	border-left: solid 1px currentColor;
+	border-right: solid 1px currentColor;
+	border-bottom: solid 1px currentColor;
+	margin: 0 0 3em 0;
+	max-width: 1000px;
+	max-width: (--large-width);
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.request h1 {
+	text-align: center;
+	font-size: 50px;
+	font-weight: bold;
+	margin-bottom: 30px;
+}
