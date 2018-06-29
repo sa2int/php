@@ -1,0 +1,1312 @@
+@charset "UTF-8";
+:root {
+	--main2-color: #5D9AB2;	/*서브 메인 스카이블루*/
+	--accent-color: #BF6A7A;	/*핑크 사용안함*/
+	--dark-main-color: #2B5566;	/*청록 사용안함*/
+	--text-bright-color: #fff;	/*흰색*/
+	--icon-color: #dd0d00;
+	--icon-bk-color: #dddddd;	/*연한 스카이블루*/
+	--gray-color: #ddd;
+	--main-color: #002e5d;		/*메인 컬러 진한 파랑*/
+	--large-width: 1200px;	/*최대 넓이*/
+	--middle-width: 800px;	/*중간 넓이*/
+	--section-one: #f1f1f1;	/*섹션1 바탕*/
+	--section-two: #f38e00; /*section-two*/
+	--header-color: #c3390f;	/*머리글 색깔 1 연한 주황*/
+	--top-color:#0086d0; /*top color*/
+}
+
+*{
+  text-decoration: none;
+  list-style: none;
+
+}
+
+/* 基本設定： フォントサイズ */
+@media (max-width: 599px) {
+	:root {
+		font-size: 14px;
+	}
+}
+
+@media (min-width: 600px) and (max-width: 799px) {
+	:root {
+		font-size: 16px;
+	}
+}
+
+@media (min-width: 800px) {
+	:root {
+		font-size: 18px;
+	}
+}
+
+body {font-size: 16px;}
+
+
+
+/* 基本設定： ページ全体 */
+body {
+	margin: 0;
+	font-family: 'メイリオ',
+		'Hiragino Kaku Gothic Pro',
+		sans-serif;
+		background-color: #f1f1f1;
+		background-color: var(--section-one);
+}
+
+
+/* ヘッダー */
+.login {
+  display: flex;
+  margin: 0 auto;
+	align-items: flex-end;
+	justify-content: flex-end;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  max-width: 1200px;
+  max-width: var(--large-width);
+  background-color: #0086d0;
+	background-color: var(--top-color);
+  text-align: center;
+}
+
+.login a {
+  color: #fff;
+  padding: 5px 0;
+  padding-right: 10px;
+
+}
+
+header {
+	/* position: absolute; */
+	top: 0;
+	left: 0;
+	z-index: 100;
+	width: 100%;
+	background-color: #0086d0;/*rgba(255,255,255,0.9)*/
+	background-color: var(--top-color);
+	/* background-image: url(/test/paku/pyeongchang2018/imgBase/top.jpg); */
+	background-position: center;
+	background-size: cover;
+
+}
+
+.nohero header {
+
+	border-bottom: solid 10px red;
+	/* border-bottom: solid 1px var(--gray-color); */
+}
+
+/* ヘッダーA: サイト名 */
+.headA {
+	display: inline-block;
+	padding-left: 20px;
+	padding-right: 20px;
+	/* background-color: white; */
+	/* background-color: var(--main-color); */
+	font-family: 'Montserrat', sans-serif;
+	font-size: 70px;
+	text-decoration: none;
+}
+
+
+/* ヘッダーB： ナビゲーションメニュー */
+.head-fixed {
+
+}
+/* .head-fixed {
+	background-color: white;
+} */
+
+.headB ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.headB a {
+	display: block;
+	padding: 20px 80px;
+	color: #fff;
+  font-family: 'Montserrat', sans-serif;
+	font-size: 20px;
+  font-weight: bold;
+
+}
+
+.headB a:hover {
+	background-color: rgba(0,0,0,0.3);
+}
+
+@media (min-width: 768px) {
+	header .container {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		max-width: 1000px;
+		max-width: var(--large-width);
+		margin-left: auto;
+		margin-right: auto;
+
+
+	}
+
+	.headB ul {
+		display: flex;
+	}
+}
+
+
+/* ヘッダーC： トグルボタン */
+
+@media (max-width: 767px) {
+	/* 小さい画面用の設定 */
+	header .container-small {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	.headC {
+		margin-right: 10px;
+		padding: 0;
+		border: none;
+		outline: none;
+		background: none;
+		font-size: 28px;
+		opacity: 0.5;
+		cursor: pointer;
+	}
+
+	.headC:hover {
+		opacity: 0.3;
+	}
+
+	.headB {
+		display: none;
+	}
+}
+
+@media (min-width: 768px) {
+	/* 大きい画面用の設定 */
+	.headC {
+		display: none;
+	}
+
+	.headB {
+		display: block !important;
+	}
+}
+
+
+/* アレンジ: ヘッダーを画面上部に固定 */
+/* .head-fixed,
+.nohero .head-fixed {
+
+	position: fixed;
+}
+
+.nohero .head-fixed + * {
+	margin-top: 600px;
+} */
+
+.iconMenu {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: auto;
+  /* padding: 0 10px; */
+  background-color: #0086d0;
+	background-color: var(--top-color);
+  /* background-color: var(--text-bright-color); */
+  max-width: 1200px;
+  max-width: var(--large-width);
+
+}
+
+.iconMenu ul {
+  display: flex;
+  padding-left: 0;
+}
+
+.iconMenu ul li a {
+  display: flex;
+
+}
+
+.iconMenu ul li:not(:first-child){
+  padding-left:30px;
+}
+
+.iconMenu ul li img {
+  width: 55px;
+
+}
+
+.iconMenu ul li span {
+
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+  margin-top: 20px;
+  color: #fff;
+}
+
+/*sectionA */
+.sectionA {
+	background-color: #f1f1f1;
+	background-color: var(--section-one);
+	color: #2B5566;
+	color: var(#2B5566);
+}
+#newcountdown{text-align: center;}
+
+.mainImg {
+	max-width: 500px;
+	max-height: 200px;
+	min-width: 500px;
+	min-height: 200px;
+}
+
+.container .subInfo, .container .mainImg {
+	/* margin-top:20px; */
+	overflow: hidden;
+text-overflow: ellipsis;
+white-space: nowrap;
+}
+.sectionA .subInfo {
+	background-color: #fff;
+	padding: 0;
+	color: black;
+}
+
+.sectionA h4 {
+	margin-top: 0;
+	/* margin-bottom: 10px; */
+	font-size: 17.5px;
+	font-family: 'Montserrat', sans-serif;
+	letter-spacing: -2px;
+	margin-bottom: 0;
+	text-align: center;
+}
+
+.sectionA .text{
+	margin-top: 10px;
+	padding: 0;
+
+}
+
+.sectionA .text li:nth-of-type(2) {
+	overflow: hidden;
+text-overflow: ellipsis;
+white-space: nowrap;
+
+}
+
+.sectionA .text li:nth-of-type(2) a {
+	color:inherit;
+}
+
+.sectionA ul {
+	margin: 0;
+}
+
+.sectionA ul li h5{
+		font-size: 25px;
+		margin: 20px 10px;
+		overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+
+
+}
+
+.sectionA ul li p {
+	padding: 20px 0 0 10px;
+	margin-top: 100px;
+
+}
+.sectionA ul li a {
+	font-size: 24px;
+	width: 70%;
+	display: inline-block;
+	border: solid 2px #fff;
+	text-decoration: none;
+	color: white;
+
+}
+
+.text li p {
+	color: black;
+}
+
+.sectionA a:hover	{
+	background-image: linear-gradient(
+		rgba(249,180,77,0.3),
+		rgba(249,180,77,0.3)
+	);
+}
+
+
+.sectionA ul li:nth-child(1) {
+	padding:0;
+	background-position: center;
+	background-size: cover;
+	background-image: url(imgBase/banner.jpg);
+	height: 300px;
+	color: #fff;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 24px;
+	overflow: hidden;
+text-overflow: ellipsis;
+white-space: nowrap;
+}
+
+.sectionA ul li:nth-child(2) {
+	padding:0;
+	height: 100px;
+color: black;
+
+
+}
+.sectionA ul li:nth-child(3) {
+	padding:0;
+	height: 100px;
+color: black;
+}
+
+.sectionA ul li:nth-child(3) p {
+	padding:0;
+	height: 100px;
+	color: black;
+	border: red 1px solid;
+}
+
+
+
+
+
+
+
+.sectionA .mainImg {
+	min-height: 500px;
+
+	background-position: center;
+	background-size: cover;
+	margin-right: 15px;
+}
+
+
+@media (min-width: 768px) {
+	.sectionA .container {
+		display: flex;
+		max-width: 1248px;
+		max-width: var(--large-width);
+		margin-left: auto;
+		margin-right: auto;
+
+	}
+
+	.sectionA .mainImg {
+		flex: 0 0 73%;
+		margin-bottom: 0;
+	}
+
+	.sectionA .subInfo {
+		flex: 0 0 25%;
+
+		/* padding: 50px; */
+	}
+
+	.mainImg {
+		max-width: 800px;
+		max-height: 300px;
+		min-width: 800px;
+		min-height: 300px;
+	}
+}
+
+
+
+
+
+/*SectionB*/
+	.sectionB {	/*sectionB 바탕색 글씨 색*/
+    background-image: url(/test/paku/pyeongchang2018/imgBase/middle.jpg);
+    background-position: center;
+    background-size: cover;
+  background-color: #f38e00;
+	background-color: var(--section-two);
+	color: #fff;
+	color: var(--text-bright-color);
+	padding: 20px 0;
+
+
+
+}
+
+
+.sectionB .container h2 {
+	text-align:center;
+	padding-bottom: 20px;
+
+}
+
+  .sectionB .container-small{	/*sectionB를 두개로 나눠서 정렬*/
+				display:flex;
+				flex-wrap:wrap;	/*이것을 설정하면 플렉스가 되지만 본래크기를 갖는다 없을경을 본래크기와 상관없이 화면에 맞게 축소가 된다*/
+				max-width:500;
+				margin:2px auto;
+				}
+
+			.sectionB article{	/*각각의 기사를 유연하게배치 한화면에 정렬*/
+								flex:1 1 200px;
+								display:flex;
+
+								}
+
+.sectionB .leftImg a {
+		position:relative;
+		flex:1;
+		/* margin: 2px; */
+		display: block;
+		/* border: solid 1px #ddd;
+		border: solid 1px var(--gray-color); */
+		color: inherit;
+		text-decoration:none;
+
+}
+
+.sectionB .leftImg p {
+	overflow: hidden;
+text-overflow: ellipsis;
+white-space: nowrap;
+}
+
+.sectionB .leftImg a:hover {
+	opacity: 0.8;
+}
+
+  .sectionB .leftImg img {
+	background-position: center;
+	background-size: cover;
+	height: auto;
+
+}
+
+ .sectionB .leftImg article:nth-of-type(1){
+		max-width: 810px;
+	min-width: 820px;
+
+}
+
+.sectionB .leftImg article:nth-of-type(2) {
+
+		margin-top: 15px;
+	max-width: 400px;
+
+}
+
+.sectionB .leftImg article:nth-of-type(3) {
+
+	margin-top: 15px;
+	margin-left: 12px;
+	max-width: 400px;
+
+}
+
+.sectionB .leftImg article:nth-of-type(1) img {
+		position: relative;
+		background-position: center;
+		background-size: cover;
+    max-width: 810px;
+	min-width: 820px;
+
+}
+
+.sectionB .leftImg article:nth-of-type(2) img {
+		position: relative;
+		background-position: center;
+		background-size: cover;
+		max-width:100%;
+		max-height:100%;
+}
+
+.sectionB  .leftImg article:nth-of-type(3) img {
+		position: relative;
+		background-position: center;
+		background-size: cover;
+		max-width:100%;
+		max-height:100%;
+}
+
+ .sectionB .leftImg .text {
+	position:absolute;
+	bottom:0;
+	left:0;
+	margin-bottom: 5px;
+	padding: 0;
+	color:#fff;
+	color:var(--text-bright-color);
+	background-color: rgba(0,0,0,0.5);
+	width: 100%;
+
+}
+
+.sectionB  .leftImg h4 {
+	margin:0;
+	font-size: 25px;
+}
+
+.sectionB  .leftImg p {
+	margin:0;
+	font-size: 14px;
+	opacity: 0.8;
+
+
+}
+
+@media(min-width:1024px){
+			.sectionB .container-small {
+				display: flex;
+				max-width: 1024px;
+				max-width: var(--large-width);
+				margin-left: auto;
+				margin-right: auto;
+			}
+			.sectionB  .leftImg article:nth-of-type(2), article:nth-of-type(3) {
+				display: inline-block;
+			}
+
+/* 			.sectionB  .leftImg article:nth-of-type(1) {
+
+			}
+
+			.sectionB  .leftImg article:nth-of-type(2) {
+			max-width:100%;
+		max-height:100%;
+
+			}
+
+			.sectionB  .leftImg article:nth-of-type(3) {
+max-width:100%;
+		max-height:100%;
+			}
+
+			.sectionB  .leftImg article:nth-of-type(2) img {
+
+				width: 340px;
+
+			}
+			.sectionB  .leftImg article:nth-of-type(3) img {
+				width: 340px;
+			}
+		} */
+
+
+/*.sectionB .rightImg `사진`*/
+		.sectionB .rightImg {
+
+		  text-align: left;
+		  margin-right:0;
+		 /* padding-right: 20px; */
+		}
+	.sectionB  .rightImg article:nth-of-type(-1n+1) .text{
+	margin-bottom: 0;
+	}
+
+				 .sectionB  .rightImg .text {
+	position:absolute;
+	bottom:0;
+	left:0;
+	margin-bottom: 5px;
+	padding: 0;
+	color:#fff;
+	color:var(--text-bright-color);
+	background-color: rgba(0,0,0,0.5);
+	width: 100%;
+
+}
+
+		.sectionB .rightImg .text h4 {
+		  margin-top: 0;
+		  margin-bottom: 5px;
+		  font-size: 25px;
+		}
+
+
+
+
+		.sectionB .rightImg p {
+		  /* text-align: center; */
+		  margin-top: 0;
+		  /* margin-bottom: 20px; */
+		  font-size: 14px;
+		  opacity: 0.8;
+		  overflow: hidden;
+		  text-overflow: ellipsis;
+		  white-space: nowrap;
+		  max-width: 250px;
+		}
+
+
+		.sectionB .rightImg a {
+		position:relative;
+		  flex: 1;
+		  margin:  0 0 0 20px;	/*왼쪽 그림 오른쪽 그림 간격!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+		  display: block;
+		  /* border: solid 1px #ddd;
+		  color: var(--gray-color); */
+		  color: inherit;
+		}
+
+
+
+		.sectionB .rightImg a:hover {
+		  text-decoration: underline;
+		  opacity: 0.8;
+		}
+
+
+
+
+
+		.sectionB  .rightImg article {
+
+		margin-bottom: 40px;
+
+				}
+
+		.sectionB  .rightImg article:nth-of-type(1) img {
+				display: flex;
+				max-width: 350px;
+        min-width: 350px;
+        max-height: 200px;
+        min-height: 200px;
+			}
+
+			.sectionB  .rightImg article:nth-of-type(2) img {
+				max-width: 350px;
+        min-width: 350px;
+        max-height: 200px;
+        min-height: 200px;
+
+			}
+			.sectionB  .rightImg article:nth-of-type(3) img {
+				max-width: 350px;
+        min-width: 350px;
+        max-height: 200px;
+        min-height: 200px;
+			}
+
+		@media(min-width:768px){
+		  .sectionB .container-small {
+		    display: flex;
+		    max-width: 1024px;
+		    max-width: var(--large-width);
+
+		  }
+
+		  .sectionB .container-small {
+		    flex: 1 1 250px;
+		  }
+		}
+
+
+
+
+    /*FOOTER*/
+    footer {
+    	color: #fff;
+    	color: var(--text-bright-color);
+    	background-color: #333333;
+    	/* background-color: var(--dark-main-color); */
+    }
+
+    footer .container {
+    	padding: 40px 20px 20px 20px;
+    }
+
+    .footA {
+      flex: 0 0 30%;
+    }
+
+    .footD {
+      flex: 0 0 20%;
+        margin-left: 240px;
+    }
+
+    .footB {
+      flex: 0 0 100%;
+    }
+
+    .footC {
+      flex: 0 0 20%;
+
+    }
+
+    @media (min-width: 768px) {
+    	footer .container {
+    		display: flex;
+    		flex-wrap: wrap;
+    		max-width: 1024px;
+    		max-width: var(--large-width);
+    		margin-left: auto;
+    		margin-right: auto;
+    	}
+
+
+    }
+
+    /* *{border:1px solid skyblue;} */
+    	/* .footA p:nth-child(n+2):nth-child(n+3) {	/*2번째부터 3번째까지 스타일적용
+    		padding: 4px 0;
+
+    	} */
+
+    	.footA h2 {
+    		margin-top: 20px;
+    		margin-bottom: 10px;
+    		font-family: 'Montserrat', sans-serif;
+    		font-size: 25px;
+    	}
+
+    	/* .footA p {
+    		margin-top: 0;
+    		margin-bottom: 0;
+    		font-size: 14px;
+    	} */
+    /*
+    	.footA a {
+    		color: inherit;
+    		text-decoration: none;
+    	} */
+
+    	/* フッターB： フッターメニュー */
+    .footB div {
+    	margin-bottom: 20px;
+    }
+
+    .footB h3 {
+    	margin-top: 0;
+    	margin-bottom: 10px;
+    	border-bottom: solid 1px currentColor;
+    	font-size: 14px;
+    }
+
+    .footB ul {
+    	margin: 0;
+    	padding: 0;
+    	list-style: none;
+    }
+
+    .footB a {
+    	display: block;
+    	padding: 3px;
+    	color: #cccccc;
+    	font-size: 12px;
+    	text-decoration: none;
+    }
+
+    .footB a:hover {
+    	background-color: rgba(0,0,0,0.3);
+    }
+
+
+    @media (min-width: 768px) {
+    	.footB {
+    		display: flex;
+    	}
+
+    	.footB div {
+    		flex: 1;
+    	}
+
+    	.footB div:not(:first-child) {
+    		margin-left: 40px;
+    	}
+    }
+
+    /* フッターC： select Box :  Websites */
+    .footC {
+    	height: 40px;
+    	text-align: right;
+    	font-family: 'Montserrat', sans-serif;
+    	margin-top: 20px;
+    	/* margin-bottom: 10px; */
+    	background-color: #484848;
+    	color: #fff;
+    	color: var(--text-bright-color);
+    	font-size: 20px;
+    }
+
+    .footC option:hover{
+    	background-color: black;
+    	text-decoration: none;
+
+    }
+
+    /* フッターD： SNSメニュー */
+    .footD {
+    	margin-top: 20px;
+    }
+
+    .footD ul {
+    	display: flex;
+    	margin: 0;
+    	padding: 0;
+    	list-style: none;
+    }
+
+    .footD a {
+    	display: block;
+    	margin-right: 8px;
+    	padding: 0;
+    	color: inherit;
+    	font-size: 16px;
+    	text-decoration: none;
+    	border: solid 1px currentColor;
+    	width: 2em;
+    	line-height: 2em;
+    	border-radius: 50%;
+    	text-align: center;
+    }
+
+    .footD a:hover {
+    	background-color: rgba(0,0,0,0.3);
+    }
+    /* 선*/
+.hrMiddle {
+	border: none;
+border-top: 3px solid ;
+color: #ddd;
+
+height: 1px;
+width: 100%;
+}
+	  .hr{
+    	border: solid 1px #fff;
+    	width: 100%;
+
+    }
+
+    /*상위로 올라가는 화살표*/
+    .up {
+    	position: fixed;
+      left: 96%;
+      bottom: 40px;
+      display: none;
+    	font-size: 50px;
+    	color:#0085cf;
+    	/* color:var(--main-color); */
+    	cursor: pointer;
+    }
+		.img {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			position:relative;
+			background-image: url(/test/paku/pyeongchang2018/imgBase/login.jpg);
+			background-size: cover;
+			background-position: bottom;
+			height: 100vh;
+
+			/* opacity: 0.2!important; filter:alpha(opacity=90); */
+			 /* filter: blur(2px); */
+
+			 filter: alpha(opacity=20);
+
+		}
+		.form {
+
+		/* border: #ddd solid 1px; */
+			position: absolute;
+			display: block;
+			font-family: 'Montserrat', sans-serif;
+			 font-size:2rem;
+			color: white;
+		     z-index: 2;
+		     top:50%;
+		     left:50%;
+		     transform: translate(-50%, -50%);
+		     text-align: center;
+		     letter-spacing: 10px;
+			background-color: rgba(0, 0, 0, 0.3);/*로그인 글씨창 색상*/
+
+			height: auto;
+			border: #ddd 1px solid;
+		}
+
+		.form input {
+			width: 100%;
+			font-size: 30px;
+			padding: 0;
+			margin: 0;
+			border:0;
+			min-height: 30px;
+		}
+
+		.form input:focus {
+			outline: none;
+		}
+
+
+		.img-cover {
+
+			position: absolute;
+		   height: 100%;
+		   width: 100%;
+		   background-color: rgba(0, 0, 0, 0.2);
+		   z-index:1;
+		}
+
+		.img .h1 {
+
+			position:absolute;
+			top:85%;
+			z-index: 100;
+			font-size:40px;
+		}
+
+		.h1 a {
+			text-decoration: none;
+  			list-style: none;
+  			color:#fff;
+
+		}
+
+		.boardMainImg img {
+			width: 100%;
+			min-height: 400px;
+			max-height: 400px;
+			background-size: cover;
+			background-position: top;
+
+		}
+
+		.boardForm {
+
+
+		 font-family: 'Montserrat', sans-serif;
+		 font-size:2rem;
+		 color: #0086d0;
+		 background-color: var(--top-color);
+		  text-align: center;
+		  letter-spacing: 10px;
+			background-color: #f1f1f1;  /*rgba(0, 0, 0, 0.3);*/
+			height: auto;
+		}
+/* *{border: green solid 1px;} */
+
+
+
+
+/*Board CSS insertBoard.php*/
+.sectorD h1{
+  font-size: 40px;
+  padding: 40px 0 0 0;
+  margin: 0;
+  text-align: center;	/*h1 position is center*/
+}
+
+.sectorD p {
+  margin: 20px auto;
+  max-width: 800px;
+  max-width: var(--middle-width);
+  text-align: center;
+
+}
+
+.sectorD .sector {
+
+  /* padding-top: 60px; */
+  padding-bottom: 20px;	/*bulletin bottom distance*/
+  max-width: 800px;	/*max-width size*/
+ 	max-width: var(--middle-width);	/*variable's max-width size */
+  margin:0 auto;	/*automatical position center*/
+
+}
+
+.contact-wrap table {
+  width: 100%;
+  height:400px;
+}
+
+.td textarea{/*textarea 테두리선 없애기, 크기 테이블과 같게 하기*/
+	border:0;
+	width: 100%;
+	resize: none;	/*textarea 크기변경 불가능*/
+	font-family: 'Montserrat', sans-serif;
+	font-size:20px;
+}
+
+.td textarea:focus{
+	outline:none;	/*textarea 크릭시 파란색으로 표시 불가*/
+}
+
+.contact-wrap table input {
+  width: 100%;
+  height:110%;
+  /* line-height: 30px; */
+	margin: 0;
+	padding: 0;
+	border: 0; /*input상자 테두리선 없애기*/
+	font-family: 'Montserrat', sans-serif;
+	font-size:20px;
+}
+
+.contact-wrap table input:focus {
+	outline: none;
+}
+
+.contact-wrap table thead td:nth-child(1) {
+	display: none;
+}
+.contact-wrap table thead td {	/*bulletin board line CSS */
+  	padding: 0 0 12px 0;
+    font-weight: bold;
+    vertical-align: top;
+    border-bottom: 3px solid #002e5d; /*#036*/
+		background-color: white;
+}
+
+.contact-wrap table thead td input {
+	padding-left: 30px;
+	width: 90%;
+}
+
+.contact-wrap table tbody td {	/*bulletin board line CSS */
+	background-color: white;
+    padding: 0 0 12px 0;
+    vertical-align: top;
+    border-bottom: 1px solid #ccc;
+}
+
+.contact-wrap table tbody td input, .contact-wrap table tbody td textarea {
+	padding-left: 10px;
+	width: 95%
+}
+
+/*記事一覧C*/
+ .listC h1{text-align:center;}
+
+.listC .container{
+
+				display:flex;
+				flex-wrap:wrap;
+
+				max-width:1200px;
+				margin:2px auto;
+				}
+
+.listC article{
+
+				flex:1 1  250px;
+				display:flex;
+
+
+
+				}
+
+.listC a {
+	position:relative;
+	flex:1;
+	margin: 2px;
+	display: block;
+	border: solid 1px #ddd;
+	border: solid 1px var(--gray-color);
+background-color:currentColor;
+	color: inherit;
+	text-decoration: none;
+
+}
+
+.listC a:hover {
+
+}
+
+.listC .photo {
+	min-height: 250px;
+	background-position: center;
+	background-size: cover;
+	opacity:0.5;
+}
+.listC .photo:hover {
+	opacity: 0.8;
+}
+
+.listC .text {
+	position:absolute;
+	bottom:0;
+	left:0;
+	margin: 10px;
+	color:#fff;
+	color:var(--text-bright-color);
+
+}
+
+
+
+.listC h2 {
+	margin:0;
+	font-size: 18px;
+}
+
+.listC p {
+	margin:0;
+	font-size: 14px;
+	opacity: 0.8;
+
+	overflow: hidden;
+text-overflow: ellipsis;
+white-space: wrap;
+width: 300px;
+height: 45px;
+}
+
+@media(min-width:1000px){
+			.listC article{flex:1 1 25%;}
+
+			.listC article:nth-child(4n+1){flex:1 1 50%;}
+			}
+
+			/* コンテンツページ: 記事 */
+			.post .container {
+				max-width: 800px;
+				max-width: var(--middle-width);
+				margin-left: auto;
+				margin-right: auto;
+				padding: 30px 10px;
+				background-color:#fff;
+				background-color:var(--text-bright-color);
+			}
+
+			.post h1 {
+				padding-left: 0.5rem;
+				border-left: solid 0.75rem #0086d0;
+
+				font-size: 2rem;
+			}
+
+			.post p {
+				font-size: 1rem;
+				line-height: 2;
+			}
+
+			.post img {
+				max-width: 100%;
+			}
+
+			/*コンテンツページ：パンクズリスト*/
+			.bread {
+
+			display: flex;
+			align-items: left;
+			justify-content: left;
+			max-width: 1200px;
+			text-align: center;
+			margin: 0 auto;
+			}
+
+			.bread ol {
+				display:flex;
+				margin: 0;
+				padding: 0;
+				list-style: none;
+
+			}
+
+			.bread a {
+				display: block;
+				padding: 5px;
+				color: inherit;
+				font-size: 0.875rem;
+				text-decoration: none;
+
+			}
+
+			.bread a::after{margin-left:10px;
+							content: '\f054';
+							font-family: 'FontAwesome';
+							opacity:0.3;
+							}
+
+			.bread a:hover {
+				background-color: rgba(0,0,0,0.3);
+			}
+
+			/*アレンジ:関連記事メニュー*/
+			.related {
+background-color:#0086d0;
+background-color: var(--top-color);
+						padding:30px 0;
+						}
+
+
+			.related ul{
+				background-color:white;
+				/* background-color:var(--text-bright-color); */
+							display:flex;
+							flex-wrap:wrap;
+							max-width:1000px;
+							max-width:var(--large-width);
+							margin:30px auto;
+							padding:0;
+							list-style:none;
+							}
+
+			.related li{
+							flex:1 1 100%;
+							display:flex;
+							}
+
+			.related a {
+				flex:1;
+				margin: 10px;
+				display: block;
+				border: solid 1px #ddd;
+				border: solid 1px var(--gray-color);
+				background-color:rgba(255,255,255,0.5);
+				color: inherit;
+				text-decoration: none;
+			}
+
+			.related a:hover {
+				opacity: 0.8;
+			}
+
+			.related .photo {
+				min-height: 100px;
+				background-position: center;
+				background-size: cover;
+
+			}
+
+			.related .text {
+				margin: 10px;
+
+			}
+
+			.related h2 {
+				font-size: 18px;
+			}
+
+			.related p {
+				font-size: 14px;
+				opacity: 0.8;
+
+
+				overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: wrap;
+			width: 300px;
+			height: 45px;
+			}
+
+			@media(min-width:600px) and (max-width:899px){
+															.related li{flex:1 1 50%;}
+															}
+
+			@media(min-width:900px){
+									.related li{flex:1 1 25%;}
+									}
